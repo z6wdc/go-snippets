@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
-	"fmt"
 	"bufio"
+	"fmt"
+	"os"
 	"strings"
 )
 
@@ -13,17 +13,18 @@ func main() {
 	text, _ := r.ReadString('\n')
 
 	// ReadString will read string including delimiter
-	cleanText := strings.TrimSuffix(text, "\n") 
-	lowerText := strings.ToLower(cleanText)
+	cleanText := strings.TrimSuffix(text, "\n")
 
-	var isFound bool
-	isFound = strings.HasPrefix(lowerText, "i") &&
-		strings.HasSuffix(lowerText, "n") &&
-		strings.Contains(lowerText, "a")
-
-	if isFound {
+	if findian(cleanText) {
 		fmt.Println("Found!")
 	} else {
 		fmt.Println("Not Found!")
 	}
+}
+
+func findian(text string) bool {
+	lowerText := strings.ToLower(text)
+	return strings.HasPrefix(lowerText, "i") &&
+		strings.HasSuffix(lowerText, "n") &&
+		strings.Contains(lowerText, "a")
 }
