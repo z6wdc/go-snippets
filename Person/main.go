@@ -14,28 +14,37 @@ type person struct {
 }
 
 func main() {
-	tom := person{
-		firstName: "Hank",
-		lastName:  "Tom",
+	aaa := person{
+		firstName: "Player",
+		lastName:  "aaa",
 		contact: contactInfo{
-			email:   "tom@mail.com",
+			email:   "aaa@mail.com",
 			zipCode: 94000,
 		},
 	}
-	fmt.Println(tom)
+	fmt.Println(aaa)
 
-	var captain person
-	fmt.Println(captain)
-	fmt.Printf("%+v\n", captain)
+	var bbb person
+	fmt.Println(bbb)
+	fmt.Printf("%+v\n", bbb)
 
 	// Updating Struct Values
-	captain.firstName = "keroro"
-	captain.lastName = "captain"
-	captain.contact = contactInfo{
-		email:   "keroro@mail.com",
+	bbb.firstName = "bbb"
+	bbb.lastName = "player"
+	bbb.contact = contactInfo{
+		email:   "bbb@mail.com",
 		zipCode: 12345,
 	}
-	captain.print()
+	bbb.print()
+
+	bbbPointer := &bbb
+
+	bbbPointer.updateName("ccc")
+	bbb.print()
+}
+
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
