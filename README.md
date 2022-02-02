@@ -12,6 +12,6 @@
 
 [Go by Example](https://gobyexample.com/)
 
-[Programming with Google Go](https://www.coursera.org/specializations/google-golang)
+[Getting Started with Go](https://www.coursera.org/learn/golang-getting-started)
 
 [Go: The Complete Developer's Guide](https://www.udemy.com/course/go-the-complete-developers-guide/)
