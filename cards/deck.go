@@ -1,19 +1,19 @@
 package main
 
 import (
-	"os"
 	"fmt"
-	"time"
-	"math/rand"
-	"strings"
 	"io/ioutil"
+	"math/rand"
+	"os"
+	"strings"
+	"time"
 )
 
 type deck []string
 
 func newDeck() deck {
 	cards := deck{}
-	
+
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
 

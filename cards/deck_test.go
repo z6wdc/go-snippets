@@ -22,7 +22,7 @@ func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 
 	deck := newDeck()
 	deck.saveToFile("_decktesting")
-	
+
 	loadedDeck := newDeckFromFile("_decktesting")
 
 	if len(loadedDeck) != 16 {
