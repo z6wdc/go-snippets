@@ -1,4 +1,4 @@
-module github.com/z6wdc/cobra-example
+module github.com/z6wdc/go-note
 
 go 1.19
 
