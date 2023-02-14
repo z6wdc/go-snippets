@@ -1,1 +1,1 @@
-# Go Examples
+# Go Notes
