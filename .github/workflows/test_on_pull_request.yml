@@ -1,0 +1,28 @@
+name: go-test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  code-format:
+    name: Code Format Check
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Install Golang
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
+          cache: true
+          cache-dependency-path: go.sum
+      - name: Run Go Format
+        run: go fmt ./...
+      - name: Check Code Differences
+        run: |
+          git status --short |\
+          wc -l |\
+          awk '{if ($1 > 0) {print "[Failure] Differences are found after go fmt."; system("git status --short"); \
+          exit 1}}'
